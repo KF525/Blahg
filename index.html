@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app="blahgApp">
+<head>
+  <title>Blahg</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="app/css/app.css">
+  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="app/js/app.js"></script>
+  <script src="app/js/controllers/layout.js"></script>
+  <script src="app/js/controllers/posts.js"></script>
+  <script src="app/js/controllers/filters.js"></script>
+  <script src="app/js/services.js"></script>
+</head>
+  <body>
+    <nav>
+      <a ui-sref=".home">Home</a>
+      <a ui-sref=".posts">Posts</a>
+      <a ui-sref="posts.new">New Post</a>
+    </nav>
+
+    <div ui-view>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<div ng-controller="postsController">
+
+  <div ui-view="new" class="newpost"></div>
+
+  Search: <input type="text" ng-model="search" />
+  Search by title: <input type="text" ng-model="search.title" />
+  Search by tag:
+  <!-- this is for filtering by tag/create a click event on input -->
+  <span ng-repeat="tag in tags">
+    <a value="tag.id" ng-click="addTag(tag.id)" class="tags">{{tag.name}}</a>
+  </span>
+
+  <!--tagArray:true-->
+  <span ng-repeat="post in posts | filter:search:strict | selectedTags:tagArray">
+    <a ui-sref="show({id: post.id})" ng-click="showPost()">
+      <h2>{{post.title}}</h2>
+    </a>
+    <span>{{post.date | date: 'EEEE'}}</span> <!--filter with date function-->
+    <p>{{post.content}}</p>
+
+    <span ng-if="post.tag_ids.length > 0">
+      Tags:
+    </span>
+    <!--tag_id is a placeholder, similar to ruby each |variable|-->
+    <small ng-repeat="tag_id in post.tag_ids">
+      {{getTagName(tag_id)}}
+    </small>
+    <hr>
+  </span>
+
+</div>

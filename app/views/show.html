@@ -1,0 +1,11 @@
+<div ng-controller="postController">
+  <h2>{{post.title}}</h2>
+  <p>{{post.date | date: 'EEEE'}}: {{post.content}}</p>
+  <span ng-if="post.tags.length > 0">
+    Tags:
+  </span>
+  <!--tag_id is a placeholder, similar to ruby each |variable|-->
+  <small ng-repeat="tag in post.tags">
+    {{tag.name}}
+  </small>
+</div>
