@@ -7,7 +7,7 @@
   Search by tag:
   <!-- this is for filtering by tag/create a click event on input -->
   <span ng-repeat="tag in tags">
-    <a value="tag.id" ng-click="addTag(tag.id)" class="tags">{{tag.name}}</a>
+    <input type="checkbox" value="tag.id" ng-click="addTag(tag.id)" class="tags">{{tag.name}}</input>
   </span>
 
   <!--tagArray:true-->

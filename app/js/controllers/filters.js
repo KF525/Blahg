@@ -12,7 +12,6 @@ filtersModule.filter('selectedTags', function() {
           return false;
         }
       }
-
       return true;
     });
   };
